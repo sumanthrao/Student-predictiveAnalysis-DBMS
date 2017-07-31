@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>student Database</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+input[type=text], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 30%;
+    background-color: #0f213f;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+</style>
+</head>
+<body>
+
+<div class="w3-container">
+  <h2>PES University</h2>
+  <p>This webpage will provide students with details and analysis of their grade cards.</p>
+</div>
+
+<div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button" onclick="opentab('Student')">Student</button>
+  <button class="w3-bar-item w3-button" onclick="opentab('Admin')">Admin</button>
+  <button class="w3-bar-item w3-button" onclick="opentab('About')">About</button>
+</div>
+
+<div id="Student" class="w3-container tab">
+  <h2>Student</h2>
+  <p>Enter your USN to veiw yor progress report.</p>
+  <div>
+  <form method="post" action="student.php" >
+    <label for="fname"><b>USN</b></label><br>
+    <input type="text" id="fname" name="usn" placeholder="Your USN...">
+	<br>
+	<input type="submit" value="Submit">
+  </form>
+  </div>
+</div>
+
+<div id="Admin" class="w3-container tab" style="display:none">
+  <h2>Adminh</h2>
+  <p>Admin can update the marks of a student.</p> 
+   <div>
+  <form method="post" action="admin.php">
+    <label for="fname"><b>Password</b></label><br>
+    <input type="password" id="fname" name="admin" placeholder="Enter PassKey...">
+	<br>
+	<input type="submit" value="Submit">
+  </form>
+  </div>
+</div>
+
+<div id="About" class="w3-container tab" style="display:none">
+  <h2>About</h2>
+  <p><i>Sem 4 DBMS project by</i><br><br>-Sraman Choudhury - 01FB15ECS301<br>-Sumanth S. Rao - 01FB15ECS308<br>-Srinivas Shekhar - 01FB15ECS314<br><br>(Section F, Sem 4, CSE)</p>
+</div>
+
+<script>
+function opentab(tabName) {
+    var i;
+    var x = document.getElementsByClassName("tab");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    document.getElementById(tabName).style.display = "block";  
+}
+</script>
+
+</body>
+</html>
